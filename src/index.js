@@ -1,4 +1,4 @@
-const ecc = require('eosjs-ecc')
+const ecc = require('eosjs-ecc-native')
 const Fcbuffer = require('fcbuffer')
 const EosApi = require('eosjs-api')
 const assert = require('assert')

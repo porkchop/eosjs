@@ -2,25 +2,18 @@
   "name": "eosjs",
   "version": "16.0.9",
   "description": "General purpose library for the EOS blockchain.",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "files": [
     "README.md",
     "docs",
-    "lib"
+    "src"
   ],
   "scripts": {
     "test": "mocha --exit --use_strict src/*.test.js",
-    "test_lib": "mocha --exit --use_strict lib/*.test.js",
     "coverage": "nyc --reporter=html npm test",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "build": "rm -fr lib && npm run build_lib && npm run build_browser",
-    "build_lib": "babel --copy-files src --out-dir lib",
-    "build_browser": "browserify -o lib/eos.js -s Eos lib/index.js",
-    "build_browser_test": "browserify -o dist/test.js lib/*.test.js",
-    "minimize": "uglifyjs lib/eos.js -o lib/eos.min.js --source-map --compress --mangle",
     "docs": "jsdoc2md src/format.js > docs/format.md",
-    "srisum": "srisum lib/eos.*",
-    "prepublishOnly": "npm run build && npm run test_lib && npm run minimize && npm run docs && npm run srisum"
+    "prepublishOnly": "npm run docs"
   },
   "repository": {
     "type": "git",
@@ -58,7 +51,7 @@
     "binaryen": "^37.0.0",
     "create-hash": "^1.1.3",
     "eosjs-api": "7.0.4",
-    "eosjs-ecc": "4.0.4",
+    "eosjs-ecc-native": "git://github.com/porkchop/eosjs-ecc.git#native-secp256k1",
     "fcbuffer": "2.2.2"
   },
   "babel": {
