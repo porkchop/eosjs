@@ -1,6 +1,6 @@
 {
   "name": "eosjs",
-  "version": "16.0.9",
+  "version": "17.0.0",
   "description": "General purpose library for the EOS blockchain.",
   "main": "src/index.js",
   "files": [
@@ -51,7 +51,7 @@
     "binaryen": "^37.0.0",
     "create-hash": "^1.1.3",
     "eosjs-api": "7.0.4",
-    "eosjs-ecc-native": "git://github.com/porkchop/eosjs-ecc.git#native-secp256k1",
+    "eosjs-ecc-native": "https://github.com/porkchop/eosjs-ecc/releases/download/5.0.0/eosjs-ecc-native-5.0.0.tgz",
     "fcbuffer": "2.2.2"
   },
   "babel": {
